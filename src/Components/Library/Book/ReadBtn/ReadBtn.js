@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./ReadBtn.module.css";
 
 const readBtn = (props) => {
+  // Change button color based upon read status
   let attachedClasses = [classes.ReadBtn, classes.Read];
   if (!props.readStatus) {
     attachedClasses = [classes.ReadBtn, classes.NotRead];
