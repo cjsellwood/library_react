@@ -30,24 +30,33 @@ class Library extends Component {
   };
 
   // Changes Read status on press of Read or Not Read button
-  changeReadStatus = (id) => {
+  changeReadStatusHandler = (id) => {
     // Find book corresponding to index from button pressed
     const index = this.state.books.findIndex((book) => {
       return book.id === id;
-    })
+    });
 
     // Get read status of the found book
     const readStatus = this.state.books[index].readStatus;
 
     // Clone existing books array from state
-    const updatedBooks = [
-      ...this.state.books,
-    ];
+    const updatedBooks = [...this.state.books];
     // Update read status of book and set it to new state
     updatedBooks[index].readStatus = !readStatus;
     this.setState({ books: updatedBooks });
   };
 
+  // Delete book when button pressed on a book
+  deleteBookHandler = (id) => {
+    // Find book corresponding to index from button pressed
+    const index = this.state.books.findIndex((book) => {
+      return book.id === id;
+    });
+
+    let updatedBooks = [...this.state.books];
+    updatedBooks.splice(index, 1);
+    this.setState({books: updatedBooks});
+  };
 
   render() {
     // Render each book from the state books array
@@ -60,7 +69,8 @@ class Library extends Component {
           readStatus={this.state.books[i].readStatus}
           key={this.state.books[i].id}
           id={this.state.books[i].id}
-          changeRead={this.changeReadStatus}
+          changeRead={this.changeReadStatusHandler}
+          deleteBook={this.deleteBookHandler}
         />
       );
     });

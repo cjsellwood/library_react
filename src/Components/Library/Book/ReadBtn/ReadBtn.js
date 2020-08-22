@@ -9,8 +9,10 @@ const readBtn = (props) => {
   }
 
   return (
-    <button className={attachedClasses.join(" ")}
-    onClick={() => props.changeRead(props.id)}>
+    <button
+      className={attachedClasses.join(" ")}
+      onClick={() => props.changeRead(props.id)}
+    >
       {props.readStatus ? "Read" : "Not Read"}
     </button>
   );

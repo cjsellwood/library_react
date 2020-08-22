@@ -11,7 +11,7 @@ const book = (props) => {
       <div>Pages: {props.pages}</div>
       <div>
         <ReadBtn changeRead={props.changeRead} id={props.id} readStatus={props.readStatus}/>
-        <DeleteBtn />
+        <DeleteBtn deleteBook={props.deleteBook} id={props.id}/>
       </div>
     </div>
   );
