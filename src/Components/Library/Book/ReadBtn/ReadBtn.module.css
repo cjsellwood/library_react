@@ -5,6 +5,7 @@
   outline: none;
   border: none;
   margin-right: 1px;
+  cursor: pointer;
 }
 
 .ReadBtn:hover {

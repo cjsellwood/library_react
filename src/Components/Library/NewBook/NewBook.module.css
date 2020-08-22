@@ -1,0 +1,25 @@
+.NewBook {
+  background-color: #512ca8;
+  color: rgb(3, 14, 170);
+  width: 260px;
+  height: 390px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.NewBook:hover {
+  outline: 10px solid rgb(230, 230, 230);
+}
+
+.NewBook button {
+  height: 100%;
+  width: 100%;
+  font-size: 20em;
+  background-color: #512ca8;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

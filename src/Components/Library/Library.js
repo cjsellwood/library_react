@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classes from "./Library.module.css";
 import Book from "./Book/Book";
+import NewBook from "./NewBook/NewBook";
 
 class Library extends Component {
   state = {
@@ -55,7 +56,7 @@ class Library extends Component {
 
     let updatedBooks = [...this.state.books];
     updatedBooks.splice(index, 1);
-    this.setState({books: updatedBooks});
+    this.setState({ books: updatedBooks });
   };
 
   render() {
@@ -75,7 +76,12 @@ class Library extends Component {
       );
     });
 
-    return <div className={classes.Library}>{booksList}</div>;
+    return (
+      <div className={classes.Library}>
+        {booksList}
+        <NewBook />
+      </div>
+    );
   }
 }
 
