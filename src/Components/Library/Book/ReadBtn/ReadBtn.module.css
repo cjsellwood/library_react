@@ -1,0 +1,20 @@
+.ReadBtn {
+  height: 100%;
+  width: 66%;
+  font-size: 1em;
+  outline: none;
+  border: none;
+  margin-right: 1px;
+}
+
+.ReadBtn:hover {
+  border: 3px solid rgb(230, 230, 230);
+}
+
+.Read {
+  background-color: green;
+}
+
+.NotRead {
+  background-color: red;
+}

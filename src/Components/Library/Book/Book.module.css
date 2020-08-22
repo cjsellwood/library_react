@@ -1,0 +1,19 @@
+.Book {
+  background-color: #512ca8;
+  color: rgb(255, 255, 255);
+  width: 260px;
+  height: 390px;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+.Book > div {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #512ca8;
+}
