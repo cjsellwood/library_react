@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import classes from "./Library.module.css";
 import Book from "./Book/Book";
 import NewBook from "./NewBook/NewBook";
+import Modal from "../UI/Modal/Modal";
+import Aux from "../../hoc/Aux/Aux";
 
 class Library extends Component {
   state = {
@@ -28,6 +30,7 @@ class Library extends Component {
         readStatus: false,
       },
     ],
+    showModal: false,
   };
 
   // Changes Read status on press of Read or Not Read button
@@ -59,6 +62,14 @@ class Library extends Component {
     this.setState({ books: updatedBooks });
   };
 
+  showModalHandler = () => {
+    this.setState({ showModal: true });
+  };
+
+  hideModalHandler = () => {
+    this.setState({ showModal: false });
+  };
+
   render() {
     // Render each book from the state books array
     const booksList = this.state.books.map((el, i) => {
@@ -77,10 +88,13 @@ class Library extends Component {
     });
 
     return (
-      <div className={classes.Library}>
-        {booksList}
-        <NewBook />
-      </div>
+      <Aux>
+        <Modal show={this.state.showModal} hideModal={this.hideModalHandler} />
+        <div className={classes.Library}>
+          {booksList}
+          <NewBook showModal={this.showModalHandler} />
+        </div>
+      </Aux>
     );
   }
 }

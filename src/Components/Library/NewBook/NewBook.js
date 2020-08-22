@@ -1,10 +1,10 @@
 import React from "react"
 import classes from "./NewBook.module.css";
 
-const newBook = () => {
+const newBook = (props) => {
   return (
     <div className={classes.NewBook}>
-      <button>+</button>
+      <button onClick={props.showModal}>+</button>
     </div>
   );
 }

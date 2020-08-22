@@ -1,0 +1,78 @@
+.BookForm {
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  position: absolute;
+  margin: auto;
+  left: 25%;
+  top: 20%;
+  padding: min(3%, 30px);
+  border-radius: 10px;
+  color: #140078;
+  z-index: 10;
+  font-size: 1.4em;
+}
+
+.BookForm > div > label {
+  font-size: 1.4em;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: none;
+  outline: none;
+  border-bottom: 2px dotted rgb(204, 203, 203);
+  width: 100%;
+  font-size: 0.8em;
+  margin: 10px 0 40px 0;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-bottom: 2px solid #140078;
+}
+
+input[type="radio"] {
+  margin: 10px 5px 10px 5px;
+  transform: scale(1.1);
+}
+
+.RadioLabel {
+  color: black;
+  font-size: 0.8em;
+}
+
+.Submit,
+.Cancel {
+  color: white;
+  margin-top: 20px;
+  width: 49%;
+  height: 50px;
+  font-size: 1em;
+  outline: none;
+  border: none;
+  padding: none;
+}
+
+.Submit {
+  background-color: #7e56c2;
+  cursor: pointer;
+}
+
+.Cancel {
+  background-color: #140078;
+  color: white;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.Submit:hover,
+.Cancel:hover {
+  background-color: #b39ddb;
+}
+
+@media only screen and (max-width: 750px) {
+  .BookForm {
+    width: 90%;
+    left: 2%;
+  }
+}
