@@ -5,13 +5,13 @@ import TopBar from "./Components/UI/TopBar/TopBar";
 import Library from "./Components/Library/Library";
 
 class App extends Component {
-  render () {
+  render() {
     return (
-    <Aux>
-      <TopBar/>
-      <Library/>
-    </Aux>
-    )
+      <Aux>
+        <TopBar />
+        <Library />
+      </Aux>
+    );
   }
 }
 

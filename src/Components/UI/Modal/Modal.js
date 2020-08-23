@@ -8,7 +8,11 @@ const modal = (props) => {
   return props.show ? (
     <Aux>
       <Backdrop hideModal={props.hideModal} />
-      <BookForm hideModal={props.hideModal} submitForm={props.submitForm} changed={props.changed}/>
+      <BookForm
+        hideModal={props.hideModal}
+        submitForm={props.submitForm}
+        changed={props.changed}
+      />
     </Aux>
   ) : null;
 };

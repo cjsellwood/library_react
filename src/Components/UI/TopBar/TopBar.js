@@ -6,7 +6,7 @@ const topBar = () => {
     <div className={classes.TopBar}>
       <h1>Library</h1>
     </div>
-  )
-}
+  );
+};
 
 export default topBar;

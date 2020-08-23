@@ -60,7 +60,7 @@ class Library extends Component {
     updatedBooks[index].readStatus = !readStatus;
 
     // Store array in local storage
-    window.localStorage.setItem('books', JSON.stringify(updatedBooks));
+    window.localStorage.setItem("books", JSON.stringify(updatedBooks));
 
     this.setState({ books: updatedBooks });
   };
@@ -76,7 +76,7 @@ class Library extends Component {
     updatedBooks.splice(index, 1);
 
     // Store array in local storage
-    window.localStorage.setItem('books', JSON.stringify(updatedBooks));
+    window.localStorage.setItem("books", JSON.stringify(updatedBooks));
 
     this.setState({ books: updatedBooks });
   };
@@ -97,9 +97,14 @@ class Library extends Component {
 
     let booksArray = [...this.state.books];
 
+    let id = 0;
+    if (booksArray.length !== 0) {
+      id = this.state.books[this.state.books.length - 1].id + 1;
+    }
+
     // Add new book object to books array in state
     booksArray.push({
-      id: this.state.books[this.state.books.length - 1].id + 1,
+      id: id,
       title: currentForm.title,
       author: currentForm.author,
       pages: Number(currentForm.pages),
@@ -107,7 +112,7 @@ class Library extends Component {
     });
 
     // Store array in local storage
-    window.localStorage.setItem('books', JSON.stringify(booksArray));
+    window.localStorage.setItem("books", JSON.stringify(booksArray));
 
     this.setState({ books: booksArray });
     this.hideModalHandler();
