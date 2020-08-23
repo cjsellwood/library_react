@@ -7,8 +7,8 @@ const modal = (props) => {
   // Show form modal based on whether state showModal is true
   return props.show ? (
     <Aux>
-      <Backdrop hideModal={props.hideModal}/>
-      <BookForm hideModal={props.hideModal}/>
+      <Backdrop hideModal={props.hideModal} />
+      <BookForm hideModal={props.hideModal} submitForm={props.submitForm} changed={props.changed}/>
     </Aux>
   ) : null;
 };

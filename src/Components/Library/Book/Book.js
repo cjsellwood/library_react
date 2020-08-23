@@ -6,12 +6,18 @@ import DeleteBtn from "./DeleteBtn/DeleteBtn";
 const book = (props) => {
   return (
     <div className={classes.Book}>
-      <div>{props.title}</div>
+      <div style={{ "fontWeight": "bold", "fontSize": "1.2em" }}>
+        {props.title}
+      </div>
       <div>{props.author}</div>
       <div>Pages: {props.pages}</div>
       <div>
-        <ReadBtn changeRead={props.changeRead} id={props.id} readStatus={props.readStatus}/>
-        <DeleteBtn deleteBook={props.deleteBook} id={props.id}/>
+        <ReadBtn
+          changeRead={props.changeRead}
+          id={props.id}
+          readStatus={props.readStatus}
+        />
+        <DeleteBtn deleteBook={props.deleteBook} id={props.id} />
       </div>
     </div>
   );
