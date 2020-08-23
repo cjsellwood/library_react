@@ -1,6 +1,5 @@
 .NewBook {
-  background-color: #512ca8;
-  color: rgb(3, 14, 170);
+  background-color: rgb(26, 146, 42);
   width: 260px;
   height: 390px;
   padding: 10px;
@@ -17,7 +16,7 @@
   height: 100%;
   width: 100%;
   font-size: 20em;
-  background-color: #512ca8;
+  background-color: rgb(26, 146, 42);
   color: white;
   outline: none;
   border: none;

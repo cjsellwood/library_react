@@ -4,7 +4,7 @@ import classes from "./BookForm.module.css";
 const bookForm = (props) => {
   return (
     <div className={classes.BookForm}>
-      <form onSubmit={props.submitForm}>
+      <form onSubmit={props.submitForm} method="post">
         <label>Title</label>
         <input
           type="text"

@@ -1,5 +1,5 @@
 .Book {
-  background-color: #512ca8;
+  background-color: rgb(26, 146, 42);
   color: rgb(255, 255, 255);
   width: 260px;
   height: 390px;
@@ -15,5 +15,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #512ca8;
+  background-color: rgb(26, 146, 42);
 }

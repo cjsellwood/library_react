@@ -1,13 +1,13 @@
 .BookForm {
   background-color: rgb(255, 255, 255);
   width: 50%;
-  position: absolute;
+  position: fixed;
   margin: auto;
   left: 25%;
   top: 20%;
   padding: min(3%, 30px);
   border-radius: 10px;
-  color: #140078;
+  color: #0a7800;
   z-index: 10;
   font-size: 1.4em;
 }
@@ -28,7 +28,7 @@ input[type="number"] {
 
 input[type="text"]:focus,
 input[type="number"]:focus {
-  border-bottom: 2px solid #140078;
+  border-bottom: 2px solid #00780a;
 }
 
 input[type="radio"] {
@@ -38,7 +38,7 @@ input[type="radio"] {
 
 .RadioLabel {
   color: black;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 .Submit,
@@ -49,17 +49,17 @@ input[type="radio"] {
   height: 50px;
   font-size: 1em;
   outline: none;
-  border: none;
+  border: 1px solid white;
   padding: none;
 }
 
 .Submit {
-  background-color: #7e56c2;
+  background-color: #2f993d;
   cursor: pointer;
 }
 
 .Cancel {
-  background-color: #140078;
+  background-color: #1b5e20;
   color: white;
   margin-left: auto;
   cursor: pointer;
@@ -67,7 +67,7 @@ input[type="radio"] {
 
 .Submit:hover,
 .Cancel:hover {
-  background-color: #b39ddb;
+  background-color: #75be7b;
 }
 
 @media only screen and (max-width: 750px) {

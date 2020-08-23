@@ -8,6 +8,7 @@
   border: none;
   margin-left: 1px;
   cursor: pointer;
+  background-color: #1b5e20;
 }
 
 .DeleteBtn:hover {
