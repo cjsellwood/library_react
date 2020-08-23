@@ -17,14 +17,6 @@ class Library extends Component {
     },
   };
 
-  // Book object constructor
-  BookItem = (title, author, pages, read) => {
-    this.id = this.state.books.length;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-  };
   // NewBook = New BookItem("Title", "Author", "124", false)
 
   // Get books array from local storage on first load
@@ -75,6 +67,10 @@ class Library extends Component {
     const updatedBooks = [...this.state.books];
     // Update read status of book and set it to new state
     updatedBooks[index].readStatus = !readStatus;
+
+    // Store array in local storage
+    window.localStorage.setItem('books', JSON.stringify(updatedBooks));
+
     this.setState({ books: updatedBooks });
   };
 
@@ -87,6 +83,10 @@ class Library extends Component {
 
     let updatedBooks = [...this.state.books];
     updatedBooks.splice(index, 1);
+
+    // Store array in local storage
+    window.localStorage.setItem('books', JSON.stringify(updatedBooks));
+
     this.setState({ books: updatedBooks });
   };
 
@@ -102,12 +102,24 @@ class Library extends Component {
   // Handle form submission
   submitFormHandler = (event) => {
     event.preventDefault();
-    console.log(event);
-    console.log(event.target);
-    console.log(event.target.value);
-    console.log("-----Submitted-----")
+    const currentForm = this.state.newBook;
+
+    let booksArray = [...this.state.books];
+
+    // Add new book object to books array in state
+    booksArray.push({
+      id: this.state.books.length,
+      title: currentForm.title,
+      author: currentForm.author,
+      pages: Number(currentForm.pages),
+      readStatus: currentForm.readStatus,
+    });
+
+    // Store array in local storage
+    window.localStorage.setItem('books', JSON.stringify(booksArray));
+
+    this.setState({ books: booksArray });
     this.hideModalHandler();
-    console.log(this.state);
   };
 
   // Changes state to the entered form values
@@ -128,7 +140,6 @@ class Library extends Component {
     }
 
     this.setState({ newBook: updatedBook });
-
   };
 
   render() {
