@@ -12,7 +12,7 @@ class Library extends Component {
     newBook: {
       title: "",
       author: "",
-      pages: 0,
+      pages: "",
       readStatus: false,
     },
   };
@@ -21,37 +21,28 @@ class Library extends Component {
 
   // Get books array from local storage on first load
   componentDidMount() {
-    let booksStored = this.getBooksFromStorage();
+    let booksStored = JSON.parse(window.localStorage.getItem("books"));
     // Test books added
-    if (booksStored === null) {
+    if (booksStored === null || booksStored.length === 0) {
       booksStored = [
         {
           id: 0,
-          title: "The Hobbit",
-          author: "J.R.R. Tolkien",
-          pages: 300,
+          title: "Title",
+          author: "Author",
+          pages: 123,
           readStatus: false,
         },
         {
           id: 1,
-          title: "Dune",
-          author: "Frank Herbert",
-          pages: 500,
+          title: "Title 2",
+          author: "Author 2",
+          pages: 456,
           readStatus: true,
         },
       ];
     }
     this.setState({ books: booksStored });
   }
-
-  // Get books from local storage
-  getBooksFromStorage = () => {
-    let booksStored = JSON.parse(window.localStorage.getItem("books"));
-    // if (booksStored === null) {
-    //   booksStored = [];
-    // }
-    return booksStored;
-  };
 
   // Changes Read status on press of Read or Not Read button
   changeReadStatusHandler = (id) => {
@@ -144,7 +135,6 @@ class Library extends Component {
 
   render() {
     // Render each book from the state books array
-    console.log(this.state);
     const booksList = this.state.books.map((el, i) => {
       return (
         <Book
