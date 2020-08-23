@@ -99,7 +99,7 @@ class Library extends Component {
 
     // Add new book object to books array in state
     booksArray.push({
-      id: this.state.books.length,
+      id: this.state.books[this.state.books.length - 1].id + 1,
       title: currentForm.title,
       author: currentForm.author,
       pages: Number(currentForm.pages),
